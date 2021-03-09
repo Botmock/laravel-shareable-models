@@ -26,6 +26,7 @@ class ShareableLinkServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/shareable-model.php' => config_path('shareable-model.php'),
             __DIR__ . '/../resources/views/password.blade.php' => resource_path('views/vendor/shareable-model'),
+            __DIR__ . '/../database/migrations' => database_path('migrations'),
         ]);
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
