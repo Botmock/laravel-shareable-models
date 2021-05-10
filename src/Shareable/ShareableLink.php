@@ -29,6 +29,13 @@ class ShareableLink extends Model
         return new ShareableLinkBuilder($entity);
     }
 
+    public function expireLink() 
+    {
+        $this->active = false;
+        $this->expires_at = Carbon::now();
+        return $this;
+    }
+
     public function shareable(): MorphTo
     {
         return $this->morphTo();

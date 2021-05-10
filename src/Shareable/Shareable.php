@@ -8,4 +8,9 @@ trait Shareable
     {
         return $this->morphMany(ShareableLink::class, 'shareable');
     }
+
+    public function active_links()
+    {
+        return $this->morphMany(ShareableLink::class, 'shareable')->where('active', 1);
+    }
 }
